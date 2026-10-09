@@ -1,0 +1,629 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>dev.kawaii() — Martina | Junior Developer &amp; 3D Creator</title>
+<!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatim matching design system -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "background": "#fff8f8",
+            "on-secondary-container": "#3f1e8c",
+            "tertiary-container": "#3fbd90",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#cebdff",
+            "on-secondary-fixed": "#21005e",
+            "primary-container": "#ff7eb6",
+            "on-primary-fixed": "#3e0022",
+            "surface": "#fff8f8",
+            "surface-tint": "#a3346a",
+            "secondary": "#674bb5",
+            "surface-container-highest": "#ecdfe3",
+            "on-tertiary-container": "#004732",
+            "on-primary-container": "#780d48",
+            "inverse-on-surface": "#faeef1",
+            "on-background": "#201a1d",
+            "tertiary-fixed-dim": "#62dcad",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#f7ebee",
+            "primary": "#a3346a",
+            "inverse-primary": "#ffb0cd",
+            "outline": "#887178",
+            "surface-container-low": "#fdf0f4",
+            "tertiary": "#006c4e",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed-variant": "#00513a",
+            "on-primary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#554248",
+            "outline-variant": "#dac0c7",
+            "on-primary-fixed-variant": "#841a51",
+            "surface-bright": "#fff8f8",
+            "secondary-fixed": "#e8ddff",
+            "on-error": "#ffffff",
+            "on-surface": "#201a1d",
+            "on-tertiary-fixed": "#002115",
+            "surface-variant": "#ecdfe3",
+            "surface-container-high": "#f1e5e9",
+            "secondary-container": "#ab8ffe",
+            "on-secondary-fixed-variant": "#4f319c",
+            "primary-fixed": "#ffd9e5",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#ffb0cd",
+            "on-error-container": "#93000a",
+            "surface-dim": "#e3d7da",
+            "inverse-surface": "#352f31",
+            "tertiary-fixed": "#80f9c8"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "margin": "2.5rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "label-code-sm": ["JetBrains Mono"],
+            "label-code-lg": ["JetBrains Mono"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-code-md": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }],
+            "headline-lg": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-md": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-code-sm": ["0.6875rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "label-code-lg": ["0.9375rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-xl": ["3.5rem", { "lineHeight": "4.25rem", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }],
+            "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }],
+            "label-code-md": ["0.8125rem", { "lineHeight": "1.25rem", "letterSpacing": "0em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Custom Kawaii Pointer Trail */
+    .kawaii-cursor-trail {
+      pointer-events: none;
+      position: fixed;
+      width: 14px;
+      height: 14px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, #ff7eb6 20%, #cebdff 80%);
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s ease-out, opacity 0.3s ease-out;
+      z-index: 99999;
+      opacity: 0.75;
+      mix-blend-mode: multiply;
+    }
+    .sparkle-particle {
+      pointer-events: none;
+      position: fixed;
+      font-size: 11px;
+      user-select: none;
+      z-index: 99998;
+      animation: floatSparkle 0.8s ease-out forwards;
+    }
+    @keyframes floatSparkle {
+      0% { opacity: 1; transform: translate(0, 0) scale(1); }
+      100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.3); }
+    }
+    /* Frosted Clay Card Elevation */
+    .frosted-clay {
+      box-shadow: 0 8px 24px -4px rgba(224, 215, 255, 0.45), 0 2px 6px rgba(45, 38, 39, 0.03);
+      border: 1px solid rgba(218, 192, 199, 0.6);
+      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .frosted-clay:hover {
+      box-shadow: 0 16px 36px -6px rgba(255, 126, 182, 0.22), 0 4px 12px rgba(45, 38, 39, 0.04);
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md relative min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- Interactive Custom Cursor Element -->
+<div class="kawaii-cursor-trail hidden md:block" id="kawaii-cursor" style="left: 743px; top: 4042px;"></div>
+<!-- Fullscreen Animated Procedural Background Shader -->
+<!-- STITCH_SHADER_START:ANIMATION_2 class="fixed inset-0 w-full h-full pointer-events-none opacity-40 z-0" -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
+<span class="absolute top-24 left-[8%] text-primary/30 text-headline-sm font-label-code-md animate-pulse">✦</span>
+<span class="absolute top-[32%] left-[5%] text-secondary/30 text-headline-sm font-label-code-md">⋆ ˚｡⋆</span>
+<span class="absolute top-[58%] left-[6%] text-primary/25 text-headline-md font-label-code-md animate-pulse">☁️</span>
+<span class="absolute top-[80%] left-[9%] text-secondary/30 text-headline-sm font-label-code-md">✧(｡•́‿•̀｡)</span>
+<span class="absolute top-28 right-[10%] text-secondary/30 text-headline-sm font-label-code-md animate-pulse">⋆｡˚ ☁︎</span>
+<span class="absolute top-[40%] right-[6%] text-primary/30 text-headline-md font-label-code-md">✧</span>
+<span class="absolute top-[68%] right-[7%] text-primary-container/40 text-headline-sm font-label-code-md animate-pulse">🎀</span>
+<span class="absolute top-[88%] right-[11%] text-secondary-container/30 text-label-code-lg font-label-code-md">{ ♡ }</span>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_2 -->
+<!-- Floating Ambient Kawaii Developer Symbols -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
+<span class="absolute top-24 left-[8%] text-primary/30 text-headline-sm font-label-code-md animate-pulse">✦</span>
+<span class="absolute top-[32%] left-[5%] text-secondary/30 text-headline-sm font-label-code-md">⋆ ˚｡⋆</span>
+<span class="absolute top-[58%] left-[6%] text-primary/25 text-headline-md font-label-code-md animate-pulse">☁️</span>
+<span class="absolute top-[80%] left-[9%] text-secondary/30 text-headline-sm font-label-code-md">✧(｡•́‿•̀｡)</span>
+<span class="absolute top-28 right-[10%] text-secondary/30 text-headline-sm font-label-code-md animate-pulse">⋆｡˚ ☁︎</span>
+<span class="absolute top-[40%] right-[6%] text-primary/30 text-headline-md font-label-code-md">✧</span>
+<span class="absolute top-[68%] right-[7%] text-primary-container/40 text-headline-sm font-label-code-md animate-pulse">🎀</span>
+<span class="absolute top-[88%] right-[11%] text-secondary-container/30 text-label-code-lg font-label-code-md">{ ♡ }</span>
+</div>
+<!-- ========================================== -->
+<!-- 1. SHARED COMPONENT: TopNavBar            -->
+<!-- ========================================== -->
+<header class="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-5xl rounded-full z-50 border border-outline-variant/30 shadow-lg shadow-primary/5 bg-surface-container-lowest/80 backdrop-blur-md transition-all">
+<div class="flex justify-between items-center px-6 py-3 max-w-5xl mx-auto">
+<a class="font-label-code-lg text-label-code-md font-bold text-primary tracking-tight flex items-center gap-2 hover:opacity-80 transition-opacity" href="#"><span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary-fixed text-primary text-body-sm shadow-sm">🌸</span><span class="">(｡♥‿♥｡) martina.dev</span></a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-primary font-bold border-b-2 border-primary pb-0.5 text-label-code-md font-label-code-md" href="#proyectos">proyectos ✨</a>
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors text-label-code-md font-label-code-md" href="#servicios">servicios 🎀</a>
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors text-label-code-md font-label-code-md" href="#historia">sobre mí ☁️</a>
+<a class="text-on-surface-variant hover:text-primary font-medium transition-colors text-label-code-md font-label-code-md" href="#stack">stack 💻</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="hidden lg:flex items-center gap-2 px-3.5 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed-variant text-label-code-sm font-label-code-sm border border-primary-container/40">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="">disponible para crear ✨</span>
+</div>
+<a class="px-5 py-2 rounded-full bg-gradient-to-r from-primary-container to-secondary-container text-on-primary font-label-code-md font-bold shadow-md shadow-primary-container/30 hover:opacity-90 active:scale-95 transition-all flex items-center gap-1.5" href="#contacto">
+<span class="">hablemos</span>
+<span class="">💌</span>
+</a>
+</div>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- 2. HERO SECTION IMPACTANTE                -->
+<!-- ========================================== -->
+<section class="relative z-10 pt-36 pb-16 px-6 max-w-6xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-7 flex flex-col gap-5">
+<div class="inline-flex items-center gap-2 self-start px-4 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md border border-primary-container/40 shadow-sm">
+<span class="text-primary font-bold text-label-code-sm">git commit -m</span>
+<span class="text-on-surface-variant text-label-code-sm">"cute &amp; functional code"</span>
+<span class="">🌷</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-background tracking-tight">¡Hola! soy <span class="text-primary bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">Martina</span> 🌸<span class="block text-headline-lg-mobile md:text-headline-lg font-headline-lg text-secondary mt-1">junior dev 💻 • roblox &amp; python 🎀 • 3d creator ✨</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-xl">Llevo más de 2 años apasionada por la programación y el arte digital. Creo mundos 3D, juegos en Roblox y webs adorables con código limpio, sensibilidad pastel y mucho amor. 🎀</p>
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<a class="px-7 py-3 rounded-full bg-gradient-to-r from-primary-container to-secondary-container text-on-primary font-headline-sm text-body-md font-bold shadow-md shadow-primary-container/30 hover:opacity-95 active:scale-95 transition-all flex items-center gap-2" href="#proyectos">
+<span class="">mis proyectitos</span>
+<span class="">✨</span>
+</a>
+<a class="px-6 py-3 rounded-full bg-surface-container-lowest/90 backdrop-blur-md border border-outline-variant/60 hover:border-primary text-on-surface font-headline-sm text-body-md hover:bg-surface-container-low transition-all active:scale-95 flex items-center gap-2" href="#contacto">
+<span class="">hablemos 💌</span>
+</a>
+</div>
+<div class="grid grid-cols-3 gap-3 pt-4 border-t border-outline-variant/30 max-w-lg"><div class="p-3 rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md border border-primary-container/30 text-center"><div class="font-headline-md text-headline-md text-primary">+2 años</div><div class="font-label-code-sm text-label-code-sm text-on-surface-variant">creando código 🎀</div></div><div class="p-3 rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md border border-secondary-container/30 text-center"><div class="font-headline-md text-headline-md text-secondary">Kodland</div><div class="font-label-code-sm text-label-code-sm text-on-surface-variant">alumna destacada ☁️</div></div><div class="p-3 rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant/30 text-center"><div class="font-headline-md text-headline-md text-primary">+20 proyectos</div><div class="font-label-code-sm text-label-code-sm text-on-surface-variant">Roblox, Web &amp; 3D 🍓</div></div></div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="rounded-3xl bg-inverse-surface text-surface-bright shadow-2xl border border-outline/30 overflow-hidden backdrop-blur-xl">
+<div class="flex items-center justify-between px-4 py-3 bg-inverse-surface border-b border-outline/20">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-secondary-container inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-primary-fixed inline-block"></span>
+</div>
+<div class="flex items-center gap-1 font-label-code-sm text-label-code-sm">
+<div class="px-3 py-1 rounded-t-lg bg-surface-dim/20 text-inverse-primary border-t-2 border-primary-container flex items-center gap-1.5"><span class="">about_martina.ts</span><span class="text-[10px] opacity-70">🌸</span></div>
+</div>
+<div class="text-surface-variant font-label-code-sm text-label-code-sm">
+<span class="">main* ♡</span>
+</div>
+</div>
+<div class="p-5 font-label-code-sm text-label-code-sm space-y-2 overflow-x-auto leading-relaxed"><p class="text-secondary-fixed">// ✨ junior dev &amp; creative coder</p><p class=""><span class="text-secondary-container">const</span><span class="text-inverse-primary"> developer</span><span class="text-surface-variant"> = </span><span class="text-surface-bright">{</span></p><p class="pl-4"><span class="text-primary-fixed">name:</span> <span class="text-primary-fixed-dim">"Martina"</span>,</p><p class="pl-4"><span class="text-primary-fixed">experiencia:</span> <span class="text-secondary-fixed">"+2 años aprendiendo y creando"</span>,</p><p class="pl-4"><span class="text-primary-fixed">academia:</span> <span class="text-secondary-fixed">"Kodland (¡cursos increíbles!) 💖"</span>,</p><p class="pl-4"><span class="text-primary-fixed">stack:</span> <span class="text-surface-bright">[</span><span class="text-primary-fixed-dim">"Roblox Lua"</span>, <span class="text-primary-fixed-dim">"Python"</span>, <span class="text-primary-fixed-dim">"HTML/JS"</span>, <span class="text-primary-fixed-dim">"Blender"</span><span class="text-surface-bright">]</span>,</p><p class="pl-4"><span class="text-primary-fixed">readyForWork:</span> <span class="text-primary-container">true</span></p><p class="text-surface-bright">};</p><div class="pt-2 border-t border-outline/20 flex items-center justify-between text-surface-variant text-[11px]"><span class="text-inverse-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container inline-block"></span> 0 errors · 100% cute</span><span class="">UTF-8 · TSX</span></div></div>
+</div>
+<div class="absolute -bottom-6 -right-4 p-3 rounded-2xl bg-surface-container-lowest/90 border border-primary-container/40 shadow-xl flex items-center gap-3 backdrop-blur-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center overflow-hidden border border-primary-container">
+<img class="w-full h-full object-cover" data-alt="A charming 3D kawaii character avatar in pastel clay style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk_XMKu2y4JI6ve5yk39Y2Mz0gSSBcCswfD1P_UA0_Cbjog8mW9TJCxHdt7PsJrt2VE_d2p4S_bzE5F4i0Syt0Z3k6CP8vky6glQgcU0ej_pVqL9xH47q9Uq61PbmqzHMab_CZvK_LSwNcJA6vPevAfzr79vHTbKVeEuI75OvG0e39Xx-MXGprI1XnNsMLPXzx-UUZXxJRCgPziEeljaOKruU0reRFtRhn1YxJP_o">
+</div>
+<div>
+<div class="font-headline-sm text-label-code-md text-on-surface font-bold">Blender 4.0 Live 🧸</div>
+<div class="font-label-code-sm text-label-code-sm text-primary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span> Cycles 60 FPS 🌸
+          </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 3. SECCIÓN: MI HISTORIA & TRAYECTORIA     -->
+<!-- ========================================== -->
+<section class="relative z-10 py-16 px-6 max-w-6xl mx-auto" id="historia">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-primary font-label-code-sm text-label-code-sm mb-2 shadow-sm">
+<span class="">// story.md ☁️</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">
+      un poquito de mí ☁️
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+      donde la lógica se junta con la estética dulce y la calidez humana.
+    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="rounded-3xl p-6 bg-surface-container-lowest/80 backdrop-blur-md border border-primary-container/30 frosted-clay flex flex-col justify-between"><div><div class="w-10 h-10 rounded-2xl bg-primary-fixed text-primary flex items-center justify-center text-headline-sm mb-4">🌱</div><h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">+2 Años de Pasión</h3><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Llevo más de dos años dedicándome con mucha disciplina y amor al desarrollo. Empecé explorando con curiosidad y hoy construyo proyectos completos desde cero.</p></div><span class="mt-4 text-label-code-sm text-primary font-bold">dedicación continua ✨</span></div><div class="rounded-3xl p-6 bg-surface-container-lowest/80 backdrop-blur-md border border-secondary-container/30 frosted-clay flex flex-col justify-between"><div><div class="w-10 h-10 rounded-2xl bg-secondary-fixed text-secondary flex items-center justify-center text-headline-sm mb-4">🎓</div><h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Mi Ruta en Kodland</h3><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Mi experiencia en Kodland fue súper buena, me encantan sus cursos. Me brindaron las bases sólidas para dominar lógica algorítmica, Lua y arquitectura web.</p></div><span class="mt-4 text-label-code-sm text-secondary font-bold">cursos impresionantes 💖</span></div><div class="rounded-3xl p-6 bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant/30 frosted-clay flex flex-col justify-between"><div><div class="w-10 h-10 rounded-2xl bg-primary-fixed text-primary flex items-center justify-center text-headline-sm mb-4">✨</div><h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Cursos Realizados</h3><ul class="space-y-1.5 font-label-code-sm text-label-code-sm text-on-surface-variant"><li class="">🎮 Roblox Studio &amp; Scripting Lua</li><li class="">🐍 Python Nivel 1 &amp; Nivel Pro</li><li class="">🌐 Diseño Web (HTML, CSS y JS)</li><li class="">🧸 Blender 3D &amp; Modelado Pastel</li></ul></div><span class="mt-4 text-label-code-sm text-primary font-bold">siempre creando 🌸</span></div></div>
+</section>
+<!-- ========================================== -->
+<!-- 4. SECCIÓN: EXPERIENCIA & STACK TÉCNICO   -->
+<!-- ========================================== -->
+<section class="relative z-10 py-16 px-6 max-w-6xl mx-auto" id="stack">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-secondary font-label-code-sm text-label-code-sm mb-2 shadow-sm">
+<span class="">&lt;stack &amp; tools&gt; 💻</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">
+      lo que sé usar 🎀
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+      tecnologías que domino y disfruto utilizar cada día.
+    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"><div class="p-6 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-md border border-primary-container/30 frosted-clay"><div class="flex items-center justify-between mb-3"><span class="px-3 py-1 rounded-full bg-primary-fixed text-primary font-label-code-sm text-label-code-sm">Roblox &amp; Lua 🎮</span><span class="text-headline-sm">✨</span></div><h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Roblox Studio</h3><p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Creación de mundos interactivos, mecánicas de juego multijugador, eventos y físicas con Lua scripting.</p><div class="flex flex-wrap gap-1.5"><span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/40 font-label-code-sm text-label-code-sm text-on-surface">Roblox Studio</span><span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/40 font-label-code-sm text-label-code-sm text-on-surface">Lua</span><span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/40 font-label-code-sm text-label-code-sm text-on-surface">Game Design</span></div></div><div class="p-6 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-md border border-secondary-container/30 frosted-clay"><div class="flex items-center justify-between mb-3"><span class="px-3 py-1 rounded-full bg-secondary-fixed text-secondary font-label-code-sm text-label-code-sm">Python Pro 🐍</span><span class="text-headline-sm">⚡</span></div><h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Python &amp; Lógica</h3><p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Juegos por código en terminal/Pygame, bots interactivos para Discord y automatizaciones eficientes.</p><div class="flex flex-wrap gap-1.5"><span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed/50 font-label-code-sm text-label-code-sm text-on-surface">Python Pro</span><span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed/50 font-label-code-sm text-label-code-sm text-on-surface">Discord Bots</span><span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed/50 font-label-code-sm text-label-code-sm text-on-surface">Pygame</span></div></div><div class="p-6 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant/40 frosted-clay"><div class="flex items-center justify-between mb-3"><span class="px-3 py-1 rounded-full bg-primary-fixed text-primary font-label-code-sm text-label-code-sm">Web &amp; 3D 🌸</span><span class="text-headline-sm">🧸</span></div><h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Frontend &amp; Blender</h3><p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Desarrollo web con HTML5, CSS3, JavaScript y Three.js complementado con modelado en Blender 3D.</p><div class="flex flex-wrap gap-1.5"><span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/40 font-label-code-sm text-label-code-sm text-on-surface">HTML &amp; CSS</span><span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/40 font-label-code-sm text-label-code-sm text-on-surface">JavaScript</span><span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/40 font-label-code-sm text-label-code-sm text-on-surface">Blender 3D</span></div></div></div>
+</section>
+<!-- ========================================== -->
+<!-- 5. SECCIÓN: SERVICIOS DETALLADOS           -->
+<!-- ========================================== -->
+<section class="relative z-10 py-16 px-6 max-w-6xl mx-auto" id="servicios">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-primary font-label-code-sm text-label-code-sm mb-2 shadow-sm">
+<span class="">services.execute() 🪄</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">
+      lo que puedo hacer por ti 🎀
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+      soluciones a medida con acabado hiper-cuidado y amor en cada pixel.
+    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="p-6 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-md border border-primary-container/30 frosted-clay flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed text-primary flex items-center justify-center text-headline-sm mb-4 shadow-sm">📱</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Web &amp; Apps</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Sitios responsivos, modernos y adorables. Portfolios y landing pages con micro-interacciones suaves.
+        </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between font-label-code-sm text-label-code-sm text-primary">
+<span class="">React · Tailwind</span>
+<span class="">✨ 100% Mobile</span>
+</div>
+</div>
+<div class="p-6 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-md border border-secondary-container/30 frosted-clay flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-secondary-fixed text-secondary flex items-center justify-center text-headline-sm mb-4 shadow-sm">🤖</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Bots &amp; Automatizaciones</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Bots personalizados para Discord con comandos slash, roles reactivos, minijuegos y moderación asistida.
+        </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between font-label-code-sm text-label-code-sm text-secondary">
+<span class="">Discord.js · Python</span>
+<span class="">♡ 99.9% Uptime</span>
+</div>
+</div>
+<div class="p-6 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-md border border-primary-container/30 frosted-clay flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed text-primary flex items-center justify-center text-headline-sm mb-4 shadow-sm">🎮</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Juegos 3D Web</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Prototipos tridimensionales e interactivos en WebGL y Three.js listos para correr directo en el navegador.
+        </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between font-label-code-sm text-label-code-sm text-primary">
+<span class="">Three.js · WebGL</span>
+<span class="">🕹️ Interactivo</span>
+</div>
+</div>
+<div class="p-6 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-md border border-primary-container/30 frosted-clay flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed text-primary flex items-center justify-center text-headline-sm mb-4 shadow-sm">🎨</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Ilustraciones &amp; UI Assets</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Iconos kawaii para aplicaciones, banners estilizados para canales y paletas visuales armónicas.
+        </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between font-label-code-sm text-label-code-sm text-primary">
+<span class="">Figma · Vector</span>
+<span class="">🌸 Custom Icons</span>
+</div>
+</div>
+<div class="p-6 rounded-3xl bg-surface-container-lowest/80 backdrop-blur-md border border-secondary-container/30 frosted-clay flex flex-col justify-between md:col-span-2 lg:col-span-2">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-secondary-fixed text-secondary flex items-center justify-center text-headline-sm mb-4 shadow-sm">🍩</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Modelado 3D (Blender) &amp; Dioramas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed max-w-xl">
+          Dioramas isométricos kawaii, habitaciones gaming en miniatura y props low-poly optimizados para web y animaciones.
+        </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between font-label-code-sm text-label-code-sm text-secondary">
+<span class="">Blender 4.0 · GLTF/GLB</span>
+<span class="">🧸 Low-Poly Magic</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 6. SECCIÓN: PROYECTOS DESTACADOS           -->
+<!-- ========================================== -->
+<section class="relative z-10 py-16 px-6 max-w-6xl mx-auto" id="proyectos">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-primary font-label-code-sm text-label-code-sm mb-2 shadow-sm">
+<span class="">showcase/ 🌸</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">
+      proyectos destacados ✨
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+      un vistazo a código real, dioramas 3D y aplicaciones funcionales.
+    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8"><div class="rounded-3xl overflow-hidden bg-surface-container-lowest/80 backdrop-blur-md border border-primary-container/30 frosted-clay"><div class="flex items-center justify-between px-5 py-3 bg-surface-container-low border-b border-outline-variant/30"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary-container"></span><span class="w-3 h-3 rounded-full bg-secondary-container"></span><span class="w-3 h-3 rounded-full bg-primary-fixed"></span></div><span class="font-label-code-sm text-label-code-sm text-on-surface-variant">roblox_adventure.lua</span><span class="font-label-code-sm text-label-code-sm text-primary font-bold">Roblox Studio 🎮</span></div><div class="relative h-60 w-full overflow-hidden bg-surface-container"><img class="w-full h-full object-cover" data-alt="Juego interactivo en Roblox Studio con ambiente pastel y mecánicas completas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUl5OF1Jer-klpOmF36mIEoXcgAw51D4O77ANEZQySmvwUxIxOwM3H5ESZJSh5fTEfMdQTY1jAHxOz6Ia8fcSx_ijyfzTS3OdiqIx-hktiXfQFntZQdfl2BQ_w4trIw8iUwErcUi7-FxjPuv-siOTk05p7eKeD1N7eglAgzQ7Wh82pXjMKb8IIpf5XQ61k4gW3NES8xHRVgdIiDJohT356Reu9sYfAERqUNBCHOck"></div><div class="p-6"><h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Mundo Interactivo en Roblox 🧸</h3><p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Juego multijugador creado en Roblox Studio con scripts en Lua para misiones, monedas coleccionables, teletransportes y tienda.</p><div class="flex flex-wrap gap-2 mb-5"><span class="px-2.5 py-1 rounded-full bg-primary-fixed/40 font-label-code-sm text-label-code-sm text-on-surface">Roblox Studio</span><span class="px-2.5 py-1 rounded-full bg-primary-fixed/40 font-label-code-sm text-label-code-sm text-on-surface">Lua</span><span class="px-2.5 py-1 rounded-full bg-primary-fixed/40 font-label-code-sm text-label-code-sm text-on-surface">Kodland Project</span></div><div class="flex items-center gap-3"><a class="px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-label-code-sm text-label-code-sm font-bold hover:opacity-90 transition-opacity" href="#contacto">ver demo ↗ 🌸</a><a class="px-4 py-2 rounded-full bg-surface-container text-on-surface font-label-code-sm text-label-code-sm hover:bg-surface-container-high transition-colors" href="#contacto">código ♡</a></div></div></div><div class="rounded-3xl overflow-hidden bg-surface-container-lowest/80 backdrop-blur-md border border-secondary-container/30 frosted-clay"><div class="flex items-center justify-between px-5 py-3 bg-surface-container-low border-b border-outline-variant/30"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary-container"></span><span class="w-3 h-3 rounded-full bg-secondary-container"></span><span class="w-3 h-3 rounded-full bg-primary-fixed"></span></div><span class="font-label-code-sm text-label-code-sm text-on-surface-variant">bot_discord.py</span><span class="font-label-code-sm text-label-code-sm text-secondary font-bold">Python Pro 🐍</span></div><div class="relative h-60 w-full overflow-hidden bg-surface-container"><img class="w-full h-full object-cover" data-alt="Bot de Discord programado en Python con minijuegos y utilidades" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9LHpBpXHKkV9cMmacK5oGqv327rNmhfogXx3QWj-DLwqzDernzqoZI6wdoj1aPStdsj0qCysqMY44QoXhTsLYFuSPeQfO55UviOriORkwNNive3tg5okEaZ5NHTiQXlLaL85WKTo4wfd7fZJfxJx9nA3vri0U-S84xuc4iZkDNNQqwqLDIodW5QFKBLuXC6a8NPZOwMObYt4whIFHipUoHjTzY3uni2RJ6ZzIIic"></div><div class="p-6"><h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Bot de Discord &amp; Mini-Juegos Python 🍓</h3><p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Bot multifuncional con comandos de bienvenida, juegos interactivos por turnos en Python y sistema de recompensas para servidores.</p><div class="flex flex-wrap gap-2 mb-5"><span class="px-2.5 py-1 rounded-full bg-secondary-fixed/50 font-label-code-sm text-label-code-sm text-on-surface">Python Pro</span><span class="px-2.5 py-1 rounded-full bg-secondary-fixed/50 font-label-code-sm text-label-code-sm text-on-surface">Discord API</span><span class="px-2.5 py-1 rounded-full bg-secondary-fixed/50 font-label-code-sm text-label-code-sm text-on-surface">Lógica Kodland</span></div><div class="flex items-center gap-3"><a class="px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-code-sm text-label-code-sm font-bold hover:opacity-90 transition-opacity" href="#contacto">invitar bot ↗ ✨</a><a class="px-4 py-2 rounded-full bg-surface-container text-on-surface font-label-code-sm text-label-code-sm hover:bg-surface-container-high transition-colors" href="#contacto">detalles ♡</a></div></div></div></div>
+</section>
+<!-- ========================================== -->
+<!-- 7. SECCIÓN: METODOLOGÍA & OBJETIVOS        -->
+<!-- ========================================== -->
+<section class="relative z-10 py-16 px-6 max-w-6xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-fixed text-primary font-label-code-sm text-label-code-sm mb-2 shadow-sm">
+<span class="">workflow.step() 🪄</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">
+      cómo trabajo ☁️
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+      un proceso tranquilo, transparente y sin complicaciones.
+    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8"><div class="p-6 rounded-3xl bg-surface-container-lowest frosted-clay flex flex-col justify-between"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary">P</div><div><div class="font-headline-sm text-body-md text-on-surface font-bold">Profesor Kodland</div><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-code-sm text-label-code-sm">@Mentor de Programación</span></div></div><div class="text-primary-container text-body-sm">★★★★★</div></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">"Martina demostró una creatividad y asimilación de conceptos excepcional en Roblox Lua y Python Pro. Sus proyectos siempre destacan por su calidad y cuidado en cada detalle."</p></div><div class="mt-4 pt-3 border-t border-outline-variant/30 font-label-code-sm text-label-code-sm text-surface-variant flex justify-between"><span class="">Kodland Academy</span><span class="">Python &amp; Roblox</span></div></div><div class="p-6 rounded-3xl bg-surface-container-lowest frosted-clay flex flex-col justify-between"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-secondary">L</div><div><div class="font-headline-sm text-body-md text-on-surface font-bold">Lucas R.</div><span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-container font-label-code-sm text-label-code-sm">@Amigo &amp; Colaborador</span></div></div><div class="text-primary-container text-body-sm">★★★★★</div></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">"El bot de Discord y los minijuegos que programó Martina para nuestra comunidad son geniales. Tiene más de 2 años creando cosas asombrosas y se nota su dedicación."</p></div><div class="mt-4 pt-3 border-t border-outline-variant/30 font-label-code-sm text-label-code-sm text-surface-variant flex justify-between"><span class="">Comunidad Dev</span><span class="">Discord &amp; Web</span></div></div><div class="p-6 rounded-3xl bg-surface-container-lowest frosted-clay flex flex-col justify-between"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-tertiary">V</div><div><div class="font-headline-sm text-body-md text-on-surface font-bold">Valen Art</div><span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-code-sm text-label-code-sm">@3D &amp; Digital Art</span></div></div><div class="text-primary-container text-body-sm">★★★★★</div></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">"La combinación que hace Martina entre arte 3D en Blender, Three.js y diseño web pastel es preciosa. Siempre le pone muchísima ternura a todo lo que construye."</p></div><div class="mt-4 pt-3 border-t border-outline-variant/30 font-label-code-sm text-label-code-sm text-surface-variant flex justify-between"><span class="">Colaboración</span><span class="">3D Blender &amp; Web</span></div></div><div class="p-6 rounded-3xl bg-surface-container-lowest frosted-clay flex flex-col justify-between"><div><div class="flex items-center justify-between mb-4"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary">🇬🇧</div><div><div class="font-headline-sm text-body-md text-on-surface font-bold">Clases de Inglés 🧸</div><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-code-sm text-label-code-sm">@Academia Particular</span></div></div><div class="text-primary-container text-body-sm">★★★★★</div></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">"Voy a una academia aparte desde hace unos 3 años. No sé un montón todavía, pero voy aprendiendo vocabulario básico, practicando pasito a pasito y perdiéndole el miedo a leer cositas en inglés! ☁️"</p></div><div class="mt-4 pt-3 border-t border-outline-variant/30 font-label-code-sm text-label-code-sm text-surface-variant flex justify-between"><span class="">Academia de Inglés</span><span class="">Aprendiendo pasito a paso 🌸</span></div></div></div>
+</section>
+<!-- ========================================== -->
+<!-- 8. SECCIÓN: RESEÑAS & TESTIMONIOS          -->
+<!-- ========================================== -->
+<section class="relative z-10 py-20 px-6 max-w-6xl mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-secondary font-label-code-sm text-label-code-sm mb-3">
+<span class="">#feedback-channel</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">
+        Reseñas &amp; Testimonios
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+        Mensajes directos de colaboradores, líderes comunitarios y clientes.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Review 1 -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest frosted-clay flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary">
+                K
+              </div>
+<div>
+<div class="font-headline-sm text-body-md text-on-surface font-bold">Kira Moon</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-code-sm text-label-code-sm">@Comunidad Lead</span>
+</div>
+</div>
+<div class="text-primary-container text-body-sm">★★★★★</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            "Aria nos programó el bot para nuestro servidor de arte en tiempo récord. Entendió exactamente la estética que buscábamos y la documentación que dejó fue súper clara para el equipo."
+          </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 font-label-code-sm text-label-code-sm text-surface-variant flex justify-between">
+<span class="">hace 2 semanas</span>
+<span class="">Discord Bot v14</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest frosted-clay flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-secondary">
+                L
+              </div>
+<div>
+<div class="font-headline-sm text-body-md text-on-surface font-bold">Lucas R.</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-container font-label-code-sm text-label-code-sm">@Indie Creator</span>
+</div>
+</div>
+<div class="text-primary-container text-body-sm">★★★★★</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            "Tenía miedo de contratar a un dev Jr para mi landing page, pero Aria demostró más dedicación, proactividad y ganas de dejar todo perfecto que agencias con las que trabajé antes."
+          </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 font-label-code-sm text-label-code-sm text-surface-variant flex justify-between">
+<span class="">hace 1 mes</span>
+<span class="">Portfolio Web</span>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest frosted-clay flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-tertiary">
+                V
+              </div>
+<div>
+<div class="font-headline-sm text-body-md text-on-surface font-bold">Valen Stream</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-code-sm text-label-code-sm">@VTuber &amp; Artist</span>
+</div>
+</div>
+<div class="text-primary-container text-body-sm">★★★★★</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            "Los renders 3D para mis alertas de Twitch quedaron adorables y la integración web fue instantánea. Sin duda volveré a encargarle proyectos en el futuro!"
+          </p>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/30 font-label-code-sm text-label-code-sm text-surface-variant flex justify-between">
+<span class="">hace 3 semanas</span>
+<span class="">3D Blender Props</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 9. SECCIÓN CTA & CONTACTO INTERACTIVO      -->
+<!-- ========================================== -->
+<section class="relative z-10 py-16 px-6 max-w-5xl mx-auto" id="contacto">
+<div class="rounded-3xl p-8 md:p-12 bg-gradient-to-br from-primary-fixed/40 via-surface-container-lowest/90 to-secondary-fixed/40 border border-primary-container/40 shadow-xl relative overflow-hidden backdrop-blur-xl">
+<div class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-primary-container/10 pointer-events-none blur-3xl"></div>
+<div class="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-secondary-container/10 pointer-events-none blur-3xl"></div>
+<div class="relative z-10 text-center max-w-2xl mx-auto mb-8">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest/90 border border-primary-container/40 font-label-code-sm text-label-code-sm text-primary mb-3 shadow-sm">
+<span class="">✨ ¡construyamos algo tierno juntos!</span>
+</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">
+        hablemos de tu idea 💌
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+        abierta para vacantes junior, proyectos freelance o experimentos 3D. 🌸
+      </p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-3 mb-8"><a class="px-5 py-2 rounded-full bg-surface-container-lowest/90 border border-primary-container/40 hover:border-primary text-on-surface font-label-code-md text-label-code-md flex items-center gap-2 shadow-sm transition-all hover:-translate-y-0.5" href="mailto:martina@devkawaii.me"><span class="">💌</span> martina@devkawaii.me</a><a class="px-5 py-2 rounded-full bg-surface-container-lowest/90 border border-secondary-container/40 hover:border-secondary text-on-surface font-label-code-md text-label-code-md flex items-center gap-2 shadow-sm transition-all hover:-translate-y-0.5" href="https://discord.com" rel="noopener" target="_blank"><span class="">💬</span> @martina.code</a><a class="px-5 py-2 rounded-full bg-surface-container-lowest/90 border border-outline-variant/60 hover:border-primary text-on-surface font-label-code-md text-label-code-md flex items-center gap-2 shadow-sm transition-all hover:-translate-y-0.5" href="https://github.com" rel="noopener" target="_blank"><span class="">💻</span> github.com/martinadev</a></div>
+<form class="max-w-xl mx-auto space-y-4" id="contact-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block font-label-code-sm text-label-code-sm text-on-surface-variant mb-1">Tu Nombre o Alias 🌸</label>
+<input class="w-full px-4 py-3 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant/60 focus:border-primary focus:ring-2 focus:ring-primary-container text-body-sm font-body-sm text-on-surface outline-none transition-all" placeholder="Ej: Luna" required="" type="text">
+</div>
+<div>
+<label class="block font-label-code-sm text-label-code-sm text-on-surface-variant mb-1">Correo Electrónico 💌</label>
+<input class="w-full px-4 py-3 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant/60 focus:border-primary focus:ring-2 focus:ring-primary-container text-body-sm font-body-sm text-on-surface outline-none transition-all" placeholder="tu@email.com" required="" type="email">
+</div>
+</div>
+<div>
+<label class="block font-label-code-sm text-label-code-sm text-on-surface-variant mb-1">Tipo de Proyecto 🎀</label>
+<select class="w-full px-4 py-3 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant/60 focus:border-primary focus:ring-2 focus:ring-primary-container text-body-sm font-body-sm text-on-surface outline-none transition-all">
+<option>Oportunidad Laboral Jr (Frontend / 3D) 💻</option>
+<option>Sitio Web / Portfolio Freelance ✨</option>
+<option>Bot de Discord 🤖</option>
+<option>Modelo 3D o Demo Three.js 🧸</option>
+<option>Solo pasar a saludar 🌸</option>
+</select>
+</div>
+<div>
+<label class="block font-label-code-sm text-label-code-sm text-on-surface-variant mb-1">Cuéntame los detalles ☁️</label>
+<textarea class="w-full px-4 py-3 rounded-2xl bg-surface-container-lowest/90 border border-outline-variant/60 focus:border-primary focus:ring-2 focus:ring-primary-container text-body-sm font-body-sm text-on-surface outline-none transition-all" placeholder="¿Qué tienes en mente? ¡Estaré encantada de leerte!" required="" rows="3"></textarea>
+</div>
+<button class="w-full py-3.5 rounded-full bg-gradient-to-r from-primary-container to-secondary-container text-on-primary font-headline-sm text-body-md font-bold shadow-lg shadow-primary-container/30 hover:opacity-95 active:scale-98 transition-all flex items-center justify-center gap-2" type="submit">
+<span class="">Enviar Mensaje</span>
+<span class="">💌</span>
+</button>
+<p class="text-center font-label-code-sm text-label-code-sm text-primary hidden" id="form-feedback">
+        ✓ ¡Mensaje enviado con éxito! Te responderé muy prontito ✨
+      </p>
+</form>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 10. SHARED COMPONENT: Footer               -->
+<!-- ========================================== -->
+<footer class="w-full rounded-t-3xl mt-12 border-t border-outline-variant/30 bg-surface-container-low/70 backdrop-blur-md">
+<div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4"><span class="font-label-code-md text-label-code-md font-bold text-primary">(｡♥‿♥｡) martina.dev</span><p class="text-body-sm font-body-sm text-on-surface-variant">© 2024 Martina — Hecho con Three.js, Blender y mucho amor pastel 🌸</p></div>
+</footer>
+<!-- ========================================== -->
+<!-- Vanilla JavaScript: Custom Kawaii Cursor   -->
+<!-- ========================================== -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cursor = document.getElementById('kawaii-cursor');
+      let isMoving = false;
+      let lastSparkleTime = 0;
+
+      // Mouse Move Tracking
+      window.addEventListener('mousemove', (e) => {
+        if (!cursor) return;
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+
+        // Sparkle particle trail throttle
+        const now = Date.now();
+        if (now - lastSparkleTime > 75) {
+          lastSparkleTime = now;
+          createSparkle(e.clientX, e.clientY);
+        }
+      });
+
+      function createSparkle(x, y) {
+        const icons = ['✦', '🌸', '✨', '•', '+'];
+        const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+        const particle = document.createElement('span');
+        particle.className = 'sparkle-particle text-primary';
+        particle.textContent = randomIcon;
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+
+        const angle = Math.random() * Math.PI * 2;
+        const dist = 15 + Math.random() * 25;
+        const tx = Math.cos(angle) * dist + 'px';
+        const ty = Math.sin(angle) * dist + 'px';
+        particle.style.setProperty('--tx', tx);
+        particle.style.setProperty('--ty', ty);
+
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 800);
+      }
+
+      // Simple Form Interactive Feedback
+      const form = document.getElementById('contact-form');
+      const feedback = document.getElementById('form-feedback');
+      if (form && feedback) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          feedback.classList.remove('hidden');
+          form.reset();
+        });
+      }
+    });
+  </script>
+
+
+
+
+</body></html>
